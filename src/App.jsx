@@ -15,9 +15,9 @@ function Home() {
   return (
     <>
       <Navbar />
-      <Hero />
+      <Hero  />
       <Sessions/>
-      <JoinCommunity/>
+      <JoinCommunity  id="join"/>
     </> 
   );
 }

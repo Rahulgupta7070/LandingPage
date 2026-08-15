@@ -45,7 +45,7 @@ function Hero() {
             <div className="mt-8 flex flex-wrap gap-3">
 
               <a
-                href="#community"
+               href="#join"
                 className="group flex items-center gap-2 rounded-full bg-[#102a43] px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:bg-[#087f5b]"
               >
                 Explore GD Community
