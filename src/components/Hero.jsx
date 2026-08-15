@@ -7,6 +7,7 @@ import {
 
 import profileImage from "../assets/profile.jpeg";
 import { Link } from "react-router-dom";
+import { SiLeetcode } from "react-icons/si";
 
 function Hero() {
   return (
@@ -78,6 +79,15 @@ function Hero() {
               >
                 <FiGithub />
               </a>
+                {/* LeetCode */}
+  <a
+    href="https://leetcode.com/u/Rahulll_1_29/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-600 transition hover:border-[#FFA116] hover:bg-[#FFA116] hover:text-white"
+  >
+    <SiLeetcode />
+  </a>
 
               <span className="ml-2 text-sm text-slate-400">
                 Connect with me
