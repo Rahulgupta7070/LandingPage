@@ -185,7 +185,7 @@ function Community() {
 
                 <div>
                   <p className="font-semibold text-[#102a43]">
-                    Prasant
+                    Prashant Yadav
                   </p>
 
                   <p className="text-xs text-slate-500">
