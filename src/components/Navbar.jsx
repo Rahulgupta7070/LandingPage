@@ -29,18 +29,28 @@ function Navbar() {
       path: "/topics",
     },
     {
+      name: "DSA Practice",
+      path: "/dsa",
+    },
+    {
       name: "Feedback",
       path: "/feedback",
     },
+    
   ];
 
 
   const navLinkClass = ({ isActive }) =>
-    `transition duration-200 ${
-      isActive
-        ? "font-semibold text-[#087f5b]"
-        : "text-gray-600 hover:text-[#087f5b]"
-    }`;
+    `
+      transition
+      duration-200
+      whitespace-nowrap
+      ${
+        isActive
+          ? "font-semibold text-[#087f5b]"
+          : "text-gray-600 hover:text-[#087f5b]"
+      }
+    `;
 
 
   return (
@@ -66,6 +76,7 @@ function Navbar() {
           max-w-7xl
           items-center
           justify-between
+          gap-6
         "
       >
 
@@ -76,10 +87,10 @@ function Navbar() {
 
         <Link
           to="/"
-          className="flex items-center gap-3"
+          className="flex shrink-0 items-center gap-3"
         >
 
-          {/* Logo Circle */}
+          {/* Logo */}
 
           <div
             className="
@@ -99,7 +110,7 @@ function Navbar() {
           </div>
 
 
-          {/* Brand Name */}
+          {/* Brand */}
 
           <div>
 
@@ -133,8 +144,8 @@ function Navbar() {
           className="
             hidden
             items-center
-            gap-7
-            md:flex
+            gap-6
+            lg:flex
           "
         >
 
@@ -158,35 +169,31 @@ function Navbar() {
             JOIN GD
         ================================================= */}
 
-        <a
-          href="YOUR_TOPMATE_LINK"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="
-            flex
-            items-center
-            gap-2
-            rounded-full
-            bg-[#087f5b]
-            px-5
-            py-2.5
-            text-sm
-            font-semibold
-            text-white
-            transition
-            duration-200
-            hover:bg-[#102a43]
-          "
-        >
+        <Link
+  to="/join"
+  className="
+    flex
+    shrink-0
+    items-center
+    gap-2
+    rounded-full
+    bg-[#087f5b]
+    px-5
+    py-2.5
+    text-sm
+    font-semibold
+    text-white
+    transition
+    duration-200
+    hover:bg-[#102a43]
+  "
+>
+  <FiMessageCircle />
 
-          <FiMessageCircle />
+  <span>Join GD</span>
 
-          Join GD
-
-          <FiArrowUpRight />
-
-        </a>
-
+  <FiArrowUpRight />
+</Link>
       </div>
 
     </nav>

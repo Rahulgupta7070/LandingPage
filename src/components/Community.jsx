@@ -144,7 +144,7 @@ function Community() {
             </p>
 
             <h2 className="mt-4 text-3xl font-bold text-[#102a43]">
-              Learn with Rahul & Prasant
+              Learn with Rahul & Prashant
             </h2>
 
             <p className="mt-5 leading-7 text-slate-600">
