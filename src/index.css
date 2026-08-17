@@ -1,1 +1,244 @@
 @import "tailwindcss";
+
+/* =====================================================
+   TAILWIND DARK MODE
+===================================================== */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+
+  background: #f8f7f2;
+  color: #102a43;
+
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+
+/* =====================================================
+   DARK MODE - BODY
+===================================================== */
+
+html.dark body {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+
+/* =====================================================
+   GLOBAL DARK MODE
+   Existing components ko change karne ki zarurat nahi
+===================================================== */
+
+/* Main page background */
+html.dark .bg-\[\#f8f7f2\] {
+  background-color: #0f172a !important;
+}
+
+/* Main dark blue text */
+html.dark .text-\[\#102a43\] {
+  color: #f8fafc !important;
+}
+
+/* Gray text */
+html.dark .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+html.dark .text-gray-600 {
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-gray-500 {
+  color: #94a3b8 !important;
+}
+
+
+/* =====================================================
+   GLOBAL DARK MODE - BORDERS
+===================================================== */
+
+html.dark .border-gray-200 {
+  border-color: #334155 !important;
+}
+
+html.dark .border-slate-200 {
+  border-color: #334155 !important;
+}
+
+html.dark .border-slate-300 {
+  border-color: #475569 !important;
+}
+
+
+/* =====================================================
+   HERO DARK MODE
+   White About button + social buttons
+===================================================== */
+
+/* About Me button */
+html.dark #home .bg-white {
+  background-color: #1e293b !important;
+}
+
+/* About Me button text */
+html.dark #home .text-\[\#102a43\] {
+  color: #f8fafc !important;
+}
+
+/* Social buttons */
+html.dark #home .border-slate-300 {
+  border-color: #475569 !important;
+}
+
+html.dark #home .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+
+/* =====================================================
+   HERO - PROFILE IMAGE BORDER
+   White border intentionally preserved
+===================================================== */
+
+html.dark #home .border-white {
+  border-color: #334155 !important;
+}
+
+
+/* =====================================================
+   DARK MODE - COMMON WHITE ELEMENTS
+===================================================== */
+
+/*
+   Sirf normal white backgrounds ko dark karenge.
+   #home ko upar separately handle kiya gaya hai.
+*/
+
+html.dark .bg-white {
+  background-color: #1e293b !important;
+}
+
+
+/* =====================================================
+   IMPORTANT:
+   QR CODE CARD KO WHITE RAKHNA HAI
+===================================================== */
+
+html.dark #join .bg-white {
+  background-color: #ffffff !important;
+}
+
+
+/* QR card text */
+html.dark #join .text-\[\#102a43\] {
+  color: #102a43 !important;
+}
+
+
+/* =====================================================
+   DARK MODE - WHITE BORDER
+===================================================== */
+
+html.dark .border-white {
+  border-color: #334155 !important;
+}
+
+
+/* =====================================================
+   DARK MODE - FOOTER / COMMON TEXT
+===================================================== */
+
+html.dark .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+html.dark .text-slate-300 {
+  color: #cbd5e1 !important;
+}
+
+
+/* =====================================================
+   DARK MODE - GREEN
+   Green ko same rakha gaya hai
+===================================================== */
+
+html.dark .text-\[\#087f5b\] {
+  color: #74c69d !important;
+}
+
+
+/* =====================================================
+   TEXT SELECTION
+===================================================== */
+
+::selection {
+  background: #087f5b;
+  color: white;
+}
+
+
+/* =====================================================
+   SCROLLBAR - LIGHT
+===================================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 999px;
+}
+
+
+/* =====================================================
+   SCROLLBAR - DARK
+===================================================== */
+
+html.dark ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+
+/* =====================================================
+   LINKS
+===================================================== */
+
+a {
+  text-decoration: none;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+button {
+  font-family: inherit;
+}

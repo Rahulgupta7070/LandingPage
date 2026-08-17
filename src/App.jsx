@@ -68,7 +68,9 @@ function Layout({ children }) {
 function App() {
   return (
     <BrowserRouter>
-       <ScrollToTop />
+
+      {/* Scroll page to top when route changes */}
+      <ScrollToTop />
 
       <Routes>
 
