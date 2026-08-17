@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -11,6 +12,7 @@ import Sessions from "./components/Sessions";
 import Topics from "./components/Topics";
 import JoinCommunity from "./components/JoinCommunity";
 import DSAPractice from "./components/DSAPractice";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 /* =====================================================
@@ -20,8 +22,6 @@ import DSAPractice from "./components/DSAPractice";
 function Home() {
   return (
     <>
-      <Navbar />
-
       <Hero />
 
       <Sessions />
@@ -33,21 +33,54 @@ function Home() {
 
 
 /* =====================================================
+   COMMON LAYOUT
+===================================================== */
+
+function Layout({ children }) {
+  return (
+    <div className="flex min-h-screen flex-col">
+
+      {/* ================= NAVBAR ================= */}
+
+      <Navbar />
+
+
+      {/* ================= PAGE CONTENT ================= */}
+
+      <main className="flex-1">
+        {children}
+      </main>
+
+
+      {/* ================= FOOTER ================= */}
+
+      <Footer />
+
+    </div>
+  );
+}
+
+
+/* =====================================================
    APP
 ===================================================== */
 
 function App() {
   return (
     <BrowserRouter>
+       <ScrollToTop />
 
       <Routes>
-
 
         {/* ================= HOME ================= */}
 
         <Route
           path="/"
-          element={<Home />}
+          element={
+            <Layout>
+              <Home />
+            </Layout>
+          }
         />
 
 
@@ -56,10 +89,9 @@ function App() {
         <Route
           path="/about"
           element={
-            <>
-              <Navbar />
+            <Layout>
               <About />
-            </>
+            </Layout>
           }
         />
 
@@ -69,10 +101,9 @@ function App() {
         <Route
           path="/community"
           element={
-            <>
-              <Navbar />
+            <Layout>
               <Community />
-            </>
+            </Layout>
           }
         />
 
@@ -82,10 +113,9 @@ function App() {
         <Route
           path="/growth"
           element={
-            <>
-              <Navbar />
+            <Layout>
               <Growth />
-            </>
+            </Layout>
           }
         />
 
@@ -95,10 +125,9 @@ function App() {
         <Route
           path="/topics"
           element={
-            <>
-              <Navbar />
+            <Layout>
               <Topics />
-            </>
+            </Layout>
           }
         />
 
@@ -108,10 +137,9 @@ function App() {
         <Route
           path="/feedback"
           element={
-            <>
-              <Navbar />
+            <Layout>
               <Feedback />
-            </>
+            </Layout>
           }
         />
 
@@ -121,21 +149,23 @@ function App() {
         <Route
           path="/dsa"
           element={
-            <>
-              <Navbar />
+            <Layout>
               <DSAPractice />
-            </>
+            </Layout>
           }
         />
+
+
+        {/* ================= JOIN COMMUNITY ================= */}
+
         <Route
-  path="/join"
-  element={
-    <>
-      <Navbar />
-      <JoinCommunity />
-    </>
-  }
-/>
+          path="/join"
+          element={
+            <Layout>
+              <JoinCommunity />
+            </Layout>
+          }
+        />
 
       </Routes>
 
